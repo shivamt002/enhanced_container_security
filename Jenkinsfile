@@ -1,7 +1,7 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/GopalakrishnanSubramani/enhance_docker_sec',branch: 'main'
+        git url: 'https://github.com/shivamt002/enhanced_container_security',branch: 'main'
     }
 
     stage('Image Build'){
