@@ -1,0 +1,3 @@
+dirs = {
+    'logging_path': "./"
+}
