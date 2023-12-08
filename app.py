@@ -13,8 +13,9 @@ class Scanner:
 
     
     def __init__(self) -> None:
-        self.image_name1 = docker_images["image_0"]
-        self.image_name2 = docker_images["image_1"]
+        self.docker_images = list(docker_images.values())
+        # self.image_name1 = docker_images["image_0"]
+        # self.image_name2 = docker_images["image_1"]
     
     
     def processing(self):
@@ -22,12 +23,20 @@ class Scanner:
 
         try:
             # self.process = multiprocess.io_bound()
-            t1 = Thread(target = multiprocess.io_bound, args =(self.image_name1, ))
-            t2 = Thread(target = multiprocess.io_bound, args =(self.image_name2, ))
-            t1.start()
-            t2.start()
-            t1.join()
-            t2.join()
+            threads = []
+            for image_name in self.docker_images:
+                t = Thread(target= multiprocess.io_bound, args = (image_name, ))
+                t.start()
+                threads.append(t)
+
+            for t  in threads:
+                t.join()
+            # t1 = Thread(target = multiprocess.io_bound, args =(self.image_name1, ))
+            # t2 = Thread(target = multiprocess.io_bound, args =(self.image_name2, ))
+            # t1.start()
+            # t2.start()
+            # t1.join()
+            # t2.join()
 
         except Exception as e:
             CustomException(e,sys)
