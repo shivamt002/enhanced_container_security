@@ -24,7 +24,7 @@ def io_bound(image_name):
 
         # scan_image = "trivy -q image -f table {}".format(image_name)
         # scan_result = subprocess.check_output(scan_image.split()).decode('utf-8')
-        directory_path = "scan_result"
+        directory_path = "scan_results"
         result_file = image_name.split("/")[1]      
         subprocess.run(f"trivy image {image_name}:latest --timeout 30m > {directory_path}/{result_file}.txt", shell=True)
 
