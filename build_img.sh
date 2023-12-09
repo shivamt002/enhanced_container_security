@@ -2,7 +2,7 @@
 
 echo "\n*************** Building the Image 1 ***************\n"
 
-docker build -t shivam/mysql:latest ./target_1/
+docker build -t shivam/image_1 ./target_1/
 
 echo "\n*************** Building the Image 2 ***************\n"
 
