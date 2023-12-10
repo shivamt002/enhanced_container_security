@@ -6,4 +6,8 @@ echo "\n*************** Pushing the Image 2 to the repo ***************\n"
 
 docker push shivamtiwari38/csom/image_2
 
+echo "\n*************** Pushing the Image 2 to the repo ***************\n"
+
+docker push shivamtiwari38/csom/image_3
+
 echo "\n*************** Done *********************\n"
