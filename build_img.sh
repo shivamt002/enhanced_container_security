@@ -6,7 +6,11 @@ docker build -t shivam/image_1 ./target_1/
 
 echo "\n*************** Building the Image 2 ***************\n"
 
-docker build -t shivam/image_2 ./target_3/
+docker build -t shivam/image_2 ./target_2/
+
+echo "\n*************** Building the Image 3 ***************\n"
+
+docker build -t shivam/image_3 ./target_3/
 
 echo "\n*************** Done *********************\n"
 
